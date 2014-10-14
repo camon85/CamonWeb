@@ -1,7 +1,7 @@
-package com.camon.home.dao;
+package com.camon.home.service;
 
 import com.camon.home.model.Article;
 
-public interface HomeDAO {
+public interface HomeService {
 	Article findArticle(int seq);
 }

@@ -128,7 +128,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.25</version>
 		</dependency>
-		
+
 		<!-- mybatis spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -142,12 +142,21 @@
 			<artifactId>log4jdbc-remix</artifactId>
 			<version>0.2.7</version>
 		</dependency>
-
+		
+		<!-- gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
 
 	</dependencies>
 
 	<!-- 빌드 설정 -->
 	<build>
+		<!-- ROOT.war로 파일이 생성된다 -->
+		<finalName>ROOT</finalName>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
