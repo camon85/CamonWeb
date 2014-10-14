@@ -1,9 +1,8 @@
 package com.camon.home.service.impl;
 
-import javax.annotation.Resource;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.camon.home.dao.HomeDAO;
@@ -14,7 +13,7 @@ import com.camon.home.service.HomeService;
 public class HomeServiceImpl implements HomeService {
 	private static Log log = LogFactory.getLog(HomeServiceImpl.class);
 	
-	@Resource
+	@Autowired
 	private HomeDAO homeDAO;
 	
 	@Override

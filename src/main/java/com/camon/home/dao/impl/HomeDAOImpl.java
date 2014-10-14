@@ -16,7 +16,7 @@ public class HomeDAOImpl implements HomeDAO {
 	private static final String NAME_SPACE = "board."; 
 	
 	public Article findArticle(int seq) {
-		Article article = sqlSession.selectOne(NAME_SPACE + "selectArticle");
+		Article article = sqlSession.selectOne(NAME_SPACE + "selectArticle", seq);
 		
 		return article;
 	}
