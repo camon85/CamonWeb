@@ -18,5 +18,35 @@
 		FROM article
 		WHERE seq = ${value}
 	</select>
+	
+	<insert id="insertArticle" parameterType="Article">
+		INSERT INTO article (
+			title,
+			content,
+			writer_id,
+			created_date
+		)
+		VALUES (
+			'${title}',
+			'${content}',
+			'${writerId}',
+			now()
+		)
+	</insert>
+	
+	<update id="updateArticle" parameterType="Article">
+		UPDATE article 
+		SET 
+			  title = '${title}'
+			, content = '${content}'
+			, modified_date = now()
+		WHERE seq = ${seq}
+	</update>
+	
+	<update id="updateReadCount"  parameterType="String">
+		UPDATE article
+		SET cnt = cnt + 1
+		WHERE seq = ${value}
+	</update>
 </mapper>
 

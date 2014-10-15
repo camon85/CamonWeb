@@ -18,7 +18,7 @@
 		</div>
 		<div>
 			<span class="label label-default">작성자</span>
-			<input type="text" name="writer" id="writer" value="${article.writer}" <c:if test="${not empty article}">disabled="disabled"</c:if> />
+			<input type="text" name="writerId" id="writerId" value="${article.writerId}" <c:if test="${not empty article}">disabled="disabled"</c:if> />
 		</div>
 		<div>
 			<span class="label label-default">내용</span>
@@ -43,7 +43,7 @@ $(document).ready(function () {
 function fnWrite() {
 	var ids = new Array();
 	ids.push('title');
-	ids.push('writer');
+	ids.push('writerId');
 	ids.push('content');
 	
 	if (!checkInputForm(ids)) {

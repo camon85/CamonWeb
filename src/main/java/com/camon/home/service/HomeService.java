@@ -4,4 +4,5 @@ import com.camon.home.model.Article;
 
 public interface HomeService {
 	Article findArticle(int seq);
+	int addArticle(Article article);
 }

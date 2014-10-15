@@ -24,4 +24,11 @@ public class HomeServiceImpl implements HomeService {
 		return article;
 	}
 
+	@Override
+	public int addArticle(Article article) {
+		int result = homeDAO.addArticle(article);
+		
+		return result;
+	}
+
 }
