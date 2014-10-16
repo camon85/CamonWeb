@@ -13,6 +13,12 @@
 		<result column="modified_date" 	property="modifiedDate"/>
 	</resultMap>
 	
+	<select id="selectAllArticles" resultMap="articleMap">
+		SELECT * 
+		FROM article
+		ORDER BY seq DESC
+	</select>
+	
 	<select id="selectArticle" parameterType="Integer"  resultMap="articleMap">
 		SELECT * 
 		FROM article
@@ -43,10 +49,16 @@
 		WHERE seq = ${seq}
 	</update>
 	
-	<update id="updateReadCount"  parameterType="String">
+	<update id="updateReadCount" parameterType="Integer">
 		UPDATE article
-		SET cnt = cnt + 1
+		SET read_count = read_count + 1
 		WHERE seq = ${value}
 	</update>
+	
+	<delete id="deleteArticle" parameterType="Integer">
+		DELETE FROM article 
+		WHERE seq= ${value}
+	</delete>
+	
 </mapper>
 

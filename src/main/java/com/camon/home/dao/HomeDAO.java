@@ -1,9 +1,14 @@
 package com.camon.home.dao;
 
+import java.util.List;
+
 import com.camon.home.model.Article;
 
 public interface HomeDAO {
-	Article findArticle(int seq);
-
-	int addArticle(Article article);
+	List<Article> searchAllArticles();
+	Article searchArticle(int seq);
+	int addReadCount(int seq);
+	int createArticle(Article article);
+	int modifyArticle(Article article);
+	int removeArticle(int seq);
 }

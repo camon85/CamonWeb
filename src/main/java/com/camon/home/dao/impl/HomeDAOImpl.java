@@ -1,5 +1,7 @@
 package com.camon.home.dao.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,12 +18,32 @@ public class HomeDAOImpl implements HomeDAO {
 	private static final String NAME_SPACE = "board."; 
 	
 	@Override
-	public Article findArticle(int seq) {
+	public List<Article> searchAllArticles() {
+		return sqlSession.selectList(NAME_SPACE + "selectAllArticles");
+	}
+	
+	@Override
+	public Article searchArticle(int seq) {
 		return sqlSession.selectOne(NAME_SPACE + "selectArticle", seq);
 	}
 
 	@Override
-	public int addArticle(Article article) {
+	public int createArticle(Article article) {
 		return sqlSession.insert(NAME_SPACE + "insertArticle", article);
+	}
+
+	@Override
+	public int modifyArticle(Article article) {
+		return sqlSession.update(NAME_SPACE + "updateArticle", article);
+	}
+
+	@Override
+	public int removeArticle(int seq) {
+		return sqlSession.delete(NAME_SPACE + "deleteArticle", seq);
+	}
+
+	@Override
+	public int addReadCount(int seq) {
+		return sqlSession.update(NAME_SPACE + "updateReadCount", seq);
 	}
 }

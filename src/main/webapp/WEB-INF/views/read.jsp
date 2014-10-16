@@ -11,9 +11,9 @@
 <body>
 	<h1><a href="/">BoardWeb</a></h1>
 	<div><span class="label label-default">제목</span> ${article.title}</div>
-	<div><span class="label label-default">작성자</span> ${article.writer}</div>
-	<div><span class="label label-default">작성일자</span> ${article.regDate}</div>
-	<div><span class="label label-default">조회 수</span> ${article.cnt}</div>
+	<div><span class="label label-default">작성자</span> ${article.writerId}</div>
+	<div><span class="label label-default">작성일자</span> ${article.createdDate}</div>
+	<div><span class="label label-default">조회 수</span> ${article.readCount}</div>
 	<div><span class="label label-default">내용</span> ${article.content}</div>
 	
 	<br>
