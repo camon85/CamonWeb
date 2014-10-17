@@ -51,7 +51,7 @@ public class HomeController {
 	 * @throws BizException
 	 */
 	@RequestMapping(value = "/search/allArticles/", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
-	public @ResponseBody String search(Model model) {
+	public @ResponseBody String searchAllArticles(Model model) {
 		List<Article> articleList = homeService.searchAllArticles();
 		
 		JsonElement element = new Gson().toJsonTree(articleList, new TypeToken<List<Article>>() {}.getType());
